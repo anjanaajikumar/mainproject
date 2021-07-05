@@ -1,0 +1,96 @@
+{% extends 'base.html' %}
+{% block login %}
+<li class="nav-item">
+    <a class="nav-link text-white" href="/">Logout</a>
+</li>
+{% endblock %}
+{% block content %}
+<style>
+    h4 {
+        font-size: 20px;
+    }
+</style>
+
+<div class="container p-3">
+
+    <br>
+
+    <div class="jambotron text-center p-3 bg-info">
+        <h2 class="text-white">Please select the vehicle of your choice</h2>
+    </div>
+    <div style="width:50%;margin:auto; font-size:20px">
+        <form action="{{ url_for('recommendation') }}" method="POST">
+            <div class="form-group">
+                <label for="fueltype">Which fuel type you prefer</label>
+                <select class="form-control mt-2" id="fueltype" name="FUELTYPE">
+                    <option value="PETROL">PETROL</option>
+                    <option value="DIESEL">DIESEL</option>
+                    <option value="CNG">CNG</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="fueltype">Which vehicle type do you prefer</label>
+                <select class="form-control mt-2" id="vehicletype" name="vehicletype">
+                    <option value="MANUAL">MANUAL</option>
+                    <option value="AMT">AUTOMATIC</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="fueltype">Maximum kilometers</label>
+                <select class="form-control mt-2" id="kilometer" name="Kilometer">
+                    <option value="100000">1,00,000</option>
+                    <option value="50000">50,000</option>
+                    <option value="30000">30,000</option>
+                    <option value="25000">25,000</option>
+                    <option value="10000">10,000</option>
+                    <option value="100">100</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="year">Year</label>
+                <select class="form-control mt-2" id="year" name="Year">
+                    <option value="2020">2020</option>
+                    <option value="2015">2015</option>
+                    <option value="2010">2010</option>
+                    <option value="2000">2000</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="year">Minimum Price</label>
+                <select class="form-control mt-2" id="price" name="minprice">
+                    <option value="50000">50,000</option>
+                    <option value="100000">1,00,000</option>
+                    <option value="500000">5,00,000</option>
+                    <option value="1000000">10,00,000</option>
+                    <option value="1500000">15,00,000</option>
+                    <option value="2500000">25,00,000</option>
+                    <option value="5000000">50,00,000</option>
+                    <option value="100000">1,00,000</option>
+                    
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="year">Maximum Price</label>
+                <select class="form-control mt-2" id="price" name="price">
+                    <option value="10000000">1,00,00,000</option>
+                    <option value="5000000">50,00,000</option>
+                    <option value="2500000">25,00,000</option>
+                    <option value="1500000">15,00,000</option>
+                    <option value="1000000">10,00,000</option>
+                    <option value="500000">5,00,000</option>
+                    <option value="100000">1,00,000</option>
+                    <option value="50000">50,000</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <input type="submit" class="btn btn-primary" value="View your Cars">
+            </div>
+
+        </form>
+    </div>
+</div>
+{% endblock %}

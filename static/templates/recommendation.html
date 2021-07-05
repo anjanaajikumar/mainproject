@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block login %}
+<li class="nav-item">
+    <a class="nav-link text-white" href="/">Logout</a>
+</li>
+{% endblock %}
+{% block content %}
+<div class="container">
+    <div class="jambotron text-center p-3 my-5 bg-info">
+        <h2 class="text-white">Here are the top-5 cars of your choice</h2>
+    </div>
+    <div style="width:90%;margin:auto">
+        {{ table }}
+    </div>
+
+    <div class="jambotron text-center" style="margin-left:auto">
+        <form action="{{ url_for('user') }}"><input class="btn btn-primary my-5" type="submit"
+                                                    value="Back to Home Page"></form>
+
+    </div>
+    
+{% endblock %}

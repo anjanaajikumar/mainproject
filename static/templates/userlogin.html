@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>VEHICLE RECOMMENDATION SYSTEM</title>
+  <meta charset=utf-8>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <!---Fontawesome--->
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+    integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+  <!---Bootstrap5----->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+  <!---custom style---->
+  <link rel="stylesheet" href="static/css/style.css">
+
+  <style>
+    .top {
+      background-image: url("static/img/top-pattern-150.png");
+    }
+
+    .top1 {
+      background-image: url("static/img/header-pattern-150.png");
+
+    }
+
+    .back-icon {
+      background-color: rgba(0, 0, 0, 0.4);
+    }
+  </style>
+
+</head>
+
+<body>
+
+
+
+  <header>
+    <nav>
+      <div class="container-fluid top">
+        <div class="row">
+          <div class="col-7">
+            <a href="#" class="text-decoration-none text-white">User</a><a href="#"
+              class="text-decoration-none text-white">Home</a>
+          </div>
+        </div>
+
+      </div>
+
+    </nav>
+  </header>
+  <!--menu section-->
+  <nav class="navbar top1 navbar-expand-lg">
+    <div class="container text-center">
+
+      <a href="" class="text-decoration-none text-white  pl-5">
+        <h4>AUTOMOBILE RECOMMENDATION SYSTEM</h4>
+      </a>
+      <div class="">
+        <ul class="navbar-nav">
+          <li class="nav-item"><a href="#" class="nav-link text-white">LOGOUT <i class="fas fa-sign-out-alt"></i></a>
+          </li>
+        </ul>
+
+      </div>
+
+    </div>
+  </nav>
+  <!--menu section ends-->
+  <!--section-->
+  <section class="background">
+    <div class="container-fluid slide ">
+      <div class=" container">
+        <div class="row vh-100">
+          <div class="col-12 mt-5 text-center ">
+            <h1>Search Cars Here</h1>
+            <form action="{{ url_for('recommendation') }}" method="POST">
+                  <label for="fuel">Which fuel type you prefer</label>
+                  <select id="fuel" name="FUELTYPE">
+                    <option value="PETROL">PETROL</option>
+                    <option value="DIESEL">DIESEL</option>
+                  </select>
+
+              <div class="row">
+                <div class="col-2">
+                  <div class="form-group mt-5">
+                    <label for="exampleFormControlSelect1">Price</label><br>
+                    <input type="radio" name="price" value="1"> 1<br>
+                    <input type="radio" name="price" value="2"> 2<br>
+                    <input type="radio" name="price" value="3"> 3<br>
+                    <input type="radio" name="price" value="4"> 4<br>
+
+                  </div>
+                </div>
+
+                <div class="col-2">
+                  <div class="form-group mt-5">
+                    <label for="exampleFormControlSelect1">Fuel Type</label><br>
+                    <input type="radio" name="Fueltype" value="1">1<br>
+                    <input type="radio" name="Fueltype" value="2"> 2<br>
+                    <input type="radio" name="Fueltype" value="3"> 3<br>
+                
+                  </div>
+                </div>
+
+                <div class="col-2">
+                  <div class="form-group mt-5">
+                    <label for="exampleFormControlSelect1">Vehicle Type</label><br>
+                    <input type="radio" name="Vehicletype" value="1">1<br>
+                    <input type="radio" name="Vehicletype" value="2"> 2<br>
+                    <input type="radio" name="Vehicletype" value="3"> 3<br>
+                    <select class="form-control mt-2" id="vehicletype" name="Vehicletype"> -->
+                    <option>--select--</option>
+                    <option value="0">0</option>
+      <option value="1">1</option>
+      <option>3</option>
+      <option>4</option>
+      <option>5</option>
+    </select>
+                  </div>
+                </div>
+
+                <div class="col-2">
+                  <div class="form-group mt-5">
+                    <label for="exampleFormControlSelect1">Kilometers</label><br>
+                    <input type="radio" name="Kilometer" value="1">1<br>
+                    <input type="radio" name="Kilometer" value="2"> 2<br>
+                    <input type="radio" name="Kilometer" value="3"> 3<br>
+                    <input type="radio" name="Kilometer" value="4"> 4<br>
+                    <input type="radio" name="Kilometer" value="5"> 5<br>
+                    <!-- <select class="form-control mt-2" id="kilometer" name="Kilometer"> -->
+                    <!-- <option>--select--</option> -->
+                    <!-- <option value="0">100000</option>
+      <option value="1">50000</option>
+      <option value="2">25000</option>
+      <option value="3">10000</option>
+      <option value="4">100</option>
+    </select> -->
+                  </div>
+                </div>
+
+                <div class="col-2">
+                  <div class="form-group mt-5">
+                    <label for="exampleFormControlSelect1">Year</label><br>
+                    <input type="radio" name="Year" value="1">1<br>
+                    <input type="radio" name="Year" value="2"> 2<br>
+                    <input type="radio" name="Year" value="3"> 3<br>
+                    <input type="radio" name="Year" value="4"> 4<br>
+                    <!-- <select class="form-control mt-2" id="year" name="Year"> -->
+                    <!-- <option>--select--</option> -->
+                    <!-- <option value="0">2020</option>
+      <option value="1">2015</option>
+      <option value="2">2010</option>
+      <option value="3">2000</option> 
+    </select>-->
+                  </div>
+                </div>
+              </div>
+              <button type="submit" class="btn btn-secondary mt-5">Click to view your car</button>
+            </form>
+
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </section>
+  <!--section ends-->
+
+
+  <!--section ends-->
+  <section class="container-fluid top py-3 text-white text-center">
+
+    <div>
+      RECOMMENDATION SYSTEM &copy; 2021-2022
+    </div>
+
+  </section>
+
+
+
+  <!---Jquery--->
+  <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+    crossorigin="anonymous">
+    </script>
+
+  <!---Popper---->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous">
+    </script>
+
+  <!---Custom Js-->
+  <script src="js/script.js">
+  </script>
+
+</body>
+
+</html>
